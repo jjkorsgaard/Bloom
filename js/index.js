@@ -33,7 +33,6 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
-	if (deviceId == BLOOM)
 	document.addEventListener('deviceready', onDeviceReady, false);
     bleDeviceList.addEventListener('touchstart', conn, false); // assume not scrolling
 }
@@ -58,11 +57,12 @@ function refreshDeviceList(){
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
 		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
+		if (device.name == Bloom) {
 		var listItem = document.createElement('li'),
 		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
-		//} //slut tuborgparentes til mulig if-sætning
+		} //slut tuborgparentes til mulig if-sætning
 }
 
 
