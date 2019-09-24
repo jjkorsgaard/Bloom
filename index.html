@@ -11,21 +11,33 @@
     <script type="text/javascript" src="cordova.js"></script> 
 </head>
 <body onload="onLoad()">
-    <img src="bloom_logo.png">
-    <hr>
-    <h1></h1>
-           
-		<ul id="bleDeviceList"> </ul>
+	<div class="container">
+		<div class="site-header">
+			<div class="site-logo"><h1>Bloom</h1></div>
+		</div>
+	</div>
+	<div class="site-section">
+		<h2>Forbind til Bluetooth-enhed:</h2><br>
+		<p id="bleDeviceList">test</p>
+		<h2>LYS</h2>
+		<button id="buttonOn" onclick="data('1')">Tænd</button>
+		<button id="buttonOff" onclick = "data('0')">Sluk</button>
+		<h2>VEJLEDNINGER</h2>
+	</div>
+    <!--<img class="logo" src="bloom_logo.png">
+    	<ul id="bleDeviceList"> </ul>
 		<button id="refreshButton" onClick = "refreshDeviceList()">Opdatér liste</button>
 		<br>
-		<div id="statusDiv">Status: Disconnected</div>
-		<div id="bleId">DeviceId:</div>
+		<div class="test2">
+		<div id="statusDiv">Status: Ikke forbundet</div>
+		<div id="bleId">Navn på enhed:</div>
 		<div id="debugDiv"></div>
-		<br><br>
-		<button id="ledOnButton" onclick = "data('1')">Set led ON</button>
-		<br><br>
-		<button id="ledOffButton" onclick = "data('0')">Set Led Off</button>
-		<br><br><br>
+		<br><br></div>
+		<hr>
+		<div class="test">
+		<button id="ledOnButton" onclick = "data('1')">Tænd lys</button>
+		<button id="ledOffButton" onclick = "data('0')">Sluk lys</button>
+		<br><br><br></div>
 		<input type="text" id="messageInput" value="Hello"/>
 		<br>
 		<button id="sendButton" onclick = "sendData()">Send</button>
@@ -36,7 +48,7 @@
 		<br><br>
 		<button id="disconnectButton"onClick="disconnect()">Disconnect</button>
 		<div id="receiveDiv"></div>
-    <!--<ul id="bleDeviceList"> </ul>  
+    	<ul id="bleDeviceList"> </ul>  
 		<br><br>
 		<div id="debugDiv"></div>
 		<div id="test"></div>
