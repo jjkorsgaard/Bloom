@@ -83,7 +83,7 @@ function onError(reason)  {
 
 
 function showCleaning(){
-	var url='https://google.com';	
+	var url='https://placering.000webhostapp.com';	
 	openBrowser(url);
 }
 
