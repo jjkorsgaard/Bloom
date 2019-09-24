@@ -33,6 +33,7 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
+	if (deviceId == BLOOM)
 	document.addEventListener('deviceready', onDeviceReady, false);
     bleDeviceList.addEventListener('touchstart', conn, false); // assume not scrolling
 }
