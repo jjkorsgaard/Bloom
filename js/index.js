@@ -83,7 +83,7 @@ function onError(reason)  {
 
 
 function showCleaning(){
-	var url='https://google.com';	
+	var url='https://google.dk';	
 	openBrowser(url);
 }
 
