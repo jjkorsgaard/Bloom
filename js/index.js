@@ -74,7 +74,7 @@ function conn(){
 	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
 	document.getElementById("demo").innerHTML = "Paragraph changed!";
 	if(bleDeviceName  == "WHATEVER")
-		howCleaning();
+		test();
 }
  
 
@@ -92,4 +92,8 @@ function openBrowser(url) {
     var target = '_blank';
     var options = "location=no"
     var ref = cordova.InAppBrowser.open(url, target, options);
+ }
+
+ function test() {
+	 document.getElementById("test").innerHTML = "<button>Test</button>"
  }
