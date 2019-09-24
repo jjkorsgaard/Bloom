@@ -95,5 +95,5 @@ function openBrowser(url) {
  }
 
  function test() {
-	 document.getElementById("test").innerHTML = "<button>Test</button>"
+	 document.getElementById("test").innerHTML = "<button>Test</button>";
  }
