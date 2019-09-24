@@ -74,9 +74,7 @@ function conn(){
 	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
 	if(bleDeviceName  == "WHATEVER")
 		//showCleaning();
-		var listItem = document.createElement('<button>Test</button>')
-		html = device.name+ "," + device.id;
-		listItem.innerHTML = html
+		document.getElementById("demo").innerHTML = "Paragraph changed!";
  }
  
 
