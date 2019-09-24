@@ -5,7 +5,7 @@
 	xmlns="http://www.w3.org/ns/widgets" 
 	xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
-    <name>BluifruitBeacon</name>
+    <name>Bloom</name>
     <description>
         A sample app from a phone  BLE hardware.
     </description>
