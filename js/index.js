@@ -16,7 +16,11 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
-
+// this is ble hm-10 UART service
+/*var blue= {
+    serviceUUID: "0000FFE0-0000-1000-8000-00805F9B34FB",
+    characteristicUUID: "0000FFE1-0000-1000-8000-00805F9B34FB"
+};*/
 
 //the bluefruit UART Service
 var blue ={
@@ -26,10 +30,7 @@ var blue ={
 }
 
 var ConnDeviceId;
-var bleDeviceName;
 var deviceList =[];
-
-setTimeout("window.location.reload();",20000); //reload siden hvert 20. sekund. Dermed genindlæses Bluetooth-liste
  
 function onLoad(){
 	document.addEventListener('deviceready', onDeviceReady, false);
@@ -55,13 +56,12 @@ function refreshDeviceList(){
 
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
-	if(device.name == "WHATEVER"){
-		
+		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
 		var listItem = document.createElement('li'),
 		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
-	}
+		//} //slut tuborgparentes til mulig if-sætning
 }
 
 
@@ -70,30 +70,47 @@ function conn(){
 	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
 	var deviceTouchArr = deviceTouch.split(",");
 	ConnDeviceId = deviceTouchArr[1];
-	bleDeviceName = deviceTouchArr[0];
-	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-	document.getElementById("demo").innerHTML = "Paragraph changed!";
-	if(bleDeviceName  == "WHATEVER")
-		test();
-}
+	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
+	ble.connect(ConnDeviceId, onConnect, onConnError);
+ }
  
+ //succes
+function onConnect(){
+	document.getElementById("statusDiv").innerHTML = " Status: Connected";
+	document.getElementById("bleId").innerHTML = ConnDeviceId;
+	ble.startNotification(ConnDeviceId, blue.serviceUUID, blue.rxCharacteristic, onData, onError);
+}
 
+//failure
+function onConnError(){
+	alert("Problem connecting");
+	document.getElementById("statusDiv").innerHTML = " Status: Disonnected";
+}
+
+ function onData(data){ // data received from Arduino
+	document.getElementById("receiveDiv").innerHTML =  "Received: " + bytesToString(data) + "<br/>";
+}
+
+function data(txt){
+	messageInput.value = txt;
+}	
+
+function sendData() { // send data to Arduino
+	 var data = stringToBytes(messageInput.value);
+	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
+}
+	
+function onSend(){
+	document.getElementById("sendDiv").innerHTML = "Sent: " + messageInput.value + "<br/>";
+}
+
+function disconnect() {
+	ble.disconnect(deviceId, onDisconnect, onError);
+}
+
+function onDisconnect(){
+	document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
+}
 function onError(reason)  {
 	alert("ERROR: " + reason); // real apps should use notification.alert
 }
-
-
-function showCleaning(){
-	var url='https://google.dk';	
-	openBrowser(url);
-}
-
-function openBrowser(url) {
-    var target = '_blank';
-    var options = "location=no"
-    var ref = cordova.InAppBrowser.open(url, target, options);
- }
-
- function test() {
-	 document.getElementById("test").innerHTML = "Test";
- }
