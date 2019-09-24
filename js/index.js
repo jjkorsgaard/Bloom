@@ -72,9 +72,9 @@ function conn(){
 	ConnDeviceId = deviceTouchArr[1];
 	bleDeviceName = deviceTouchArr[0];
 	document.getElementById("debugDiv").innerHTML += "<br>Debug: <br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-	//document.getElementById("demo").innerHTML = "Paragraph changed!";
+	document.getElementById("demo").innerHTML = "Paragraph changed!";
 	if(bleDeviceName  == "WHATEVER")
-		showCleaning();
+		howCleaning();
 }
  
 
