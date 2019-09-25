@@ -58,8 +58,8 @@ function onDiscoverDevice(device){
 	//Make a list in html and show devises
 		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
 		if (device.name == "BLOOM") {
-		// var listItem = document.createElement('li'),
-		// html = device.name+ "," + device.id;
+		var listItem = document.createElement('li'),
+		html = device.name;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
