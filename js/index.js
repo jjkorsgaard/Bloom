@@ -89,6 +89,7 @@ function onConnError(){
 }
 
  function onData(data){ // data received from Arduino
+	var data = ble.read(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, c, onSend, onError);
 	document.getElementById("receiveDiv").innerHTML =  "Received: " + bytesToString(data) + "<br/>";
 	ble.read(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
 }
