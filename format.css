@@ -80,6 +80,10 @@ h2 {
     display: none;
 }
 
+#lys {
+    display: none;
+}
+
 /*body{
     display: block;
     background-color: #ffffff;

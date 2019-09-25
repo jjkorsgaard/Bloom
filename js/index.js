@@ -95,7 +95,7 @@ function onConnError(){
 function data(txt){
 	messageInput.value = txt;
 	var data = stringToBytes(messageInput.value);
-	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onError);
+	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
 }	
 
 function sendData() { // send data to Arduino
@@ -116,4 +116,8 @@ function onDisconnect(){
 }
 function onError(reason)  {
 	alert("ERROR: " + reason); // real apps should use notification.alert
+}
+
+function test() {
+	document.getElementById("lys").style.display = "block";
 }
