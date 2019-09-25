@@ -59,7 +59,7 @@ function onDiscoverDevice(device){
 		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
 		if (device.name == "BK04") {
 		// var listItem = document.createElement('li'),
-		// html = device.name;
+		html = device.name;
 		// listItem.innerHTML = html;
 		// var 
 		document.getElementById("bleDeviceList").write(device.name);
