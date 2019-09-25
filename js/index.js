@@ -59,7 +59,7 @@ function onDiscoverDevice(device){
 		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
 		if (device.name == "BLOOM") {
 		var listItem = document.createElement('li'),
-		html = device.name;
+		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
@@ -70,10 +70,10 @@ function onDiscoverDevice(device){
 
 function conn(){
 	var  deviceTouch= event.srcElement.innerHTML;
-	// document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
+	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
 	var deviceTouchArr = deviceTouch.split(",");
 	ConnDeviceId = deviceTouchArr[1];
-	// document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
+	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
 	ble.connect(ConnDeviceId, onConnect, onConnError);
  }
  
