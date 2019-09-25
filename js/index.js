@@ -57,9 +57,9 @@ function refreshDeviceList(){
 function onDiscoverDevice(device){
 	//Make a list in html and show devises
 		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
-		if (device.name == "BLOOM") {
+		if (device.name == "BK04") {
 		var listItem = document.createElement('li'),
-		html = device.name+ "," + device.id;
+		html = device.name;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
@@ -99,12 +99,12 @@ function onConnError(){
 function data(txt){
 	messageInput.value = txt;
 	var data = stringToBytes(messageInput.value);
-	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
+	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data, onError);
 }	
 
 function sendData() { // send data to Arduino
 	 var data = stringToBytes(messageInput.value);
-	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
+	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data, onError);
 }
 	
 function onSend(){

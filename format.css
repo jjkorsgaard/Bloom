@@ -86,15 +86,14 @@ h2 {
 }
 
 #bleDeviceList {
-    margin-left: 8px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS';
-    font-size: 17pt;
-    margin: 0px;
-    text-decoration: underline;
-    color: #0060AE;
     text-align: center;
     text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30pt;
+    color: rgb(255, 255, 255);
+    margin: 5px auto;
+    margin-top: 0px;
 }
 
 #data {
