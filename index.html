@@ -4,15 +4,15 @@
     <meta charset="utf-8">
     <title>Bloom</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
     <link rel="stylesheet" type="text/css" href="format.css">
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script> 
 </head>
 <body onload="onLoad()">
 	<div class="site-header">
-			<div class="site-logo"><img class="logo" src="Logo.png"></div>
+			<img class="logo" src="Logo.png">
 	</div>
 	<div class="site-section">
 		<h2>Forbind til Bluetooth-enhed:</h2>
@@ -24,16 +24,17 @@
 			<h2>LYS</h2>
 			<button id="buttonOn" onclick="data('1')">Tænd</button>
 			<button id="buttonOff" onclick = "data('0')">Sluk</button>
-			<br>
+			<br><br>
 			<h2>VEJLEDNINGER</h2>
 			<br>
-			<button onclick="cleaningLog()">Vis rengøringsdagbog</button>
+			<button onclick="manuals()" class="btn">Vejledninger</button>
+			<br><br>
+			<button onclick="cleaningLog()" class="btn">Rengøringsdagbog</button>
+			<br><br>
 		</div>
 	</div>
 	
-		<!--<button id="ledOnButton" onclick = "data('1')">Tænd lys</button>
-		<button id="ledOffButton" onclick = "data('0')">Sluk lys</button>
-		<br><br><br></div>-->
+		
 		<div id="data">
 		<input type="text" id="messageInput" value="Hello"/>
 		<br></div>

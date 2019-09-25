@@ -91,6 +91,7 @@ function onConnError(){
 
  function onData(data){ // data received from Arduino
 	document.getElementById("receiveDiv").innerHTML =  "Received: " + bytesToString(data) + "<br/>";
+	return data;
 }
 
 function data(txt){
@@ -128,6 +129,10 @@ function cleaningLog(){
 	openBrowser(url);
 }
 
+function manuals(){
+	var url='https://cleaninglog.000webhostapp.com/index.html';	
+	openBrowser(url);
+}
 function openBrowser(url) {
    var target = '_blank';
    var options = "location=no"
