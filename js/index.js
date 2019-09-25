@@ -62,7 +62,8 @@ function onDiscoverDevice(device){
 		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
-		} //slut tuborgparentes til mulig if-sætning
+		conn();
+	} //slut tuborgparentes til mulig if-sætning
 }
 
 
