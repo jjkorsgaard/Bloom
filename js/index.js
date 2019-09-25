@@ -63,7 +63,7 @@ function onDiscoverDevice(device){
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		
-		ble.autoConnect("BLOOM", onConnect, onConnError);
+		ble.autoConnect(fb4e50f65397, onConnect, onConnError);
 	} //slut tuborgparentes til mulig if-sætning
 }
 
