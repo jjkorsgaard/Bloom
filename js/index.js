@@ -64,7 +64,7 @@ function onDiscoverDevice(device){
 		// var 
 		
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
-		document.getElementById("bleDeviceList").write(device.name);
+		document.write("hej");
 		showFunctions();
 		
 	} //slut tuborgparentes til mulig if-sætning
