@@ -118,6 +118,17 @@ function onError(reason)  {
 	alert("ERROR: " + reason); // real apps should use notification.alert
 }
 
-function test() {
-	document.getElementById("lys").style.display = "block";
+function showFunctions() {
+	document.getElementById("functions").style.display = "block";
+}
+
+function cleaningLog(){
+	var url='https://placering.https://cleaninglog.000webhostapp.com/index.html.com';	
+	openBrowser(url);
+}
+
+function openBrowser(url) {
+   var target = '_blank';
+   var options = "location=no"
+   var ref = cordova.InAppBrowser.open(url, target, options);
 }
