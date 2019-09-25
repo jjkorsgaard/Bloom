@@ -90,7 +90,7 @@ h2 {
     text-transform: uppercase;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 30pt;
+    font-size: 35pt;
     color: rgb(255, 255, 255);
     margin: 5px auto;
     margin-top: 0px;
@@ -118,6 +118,7 @@ h2 {
     padding: 15px 32px;
     font-weight: bold;
     border-radius: 5px;
+    width: 300px;
 }
 .btn:active {
     background-color: black;
