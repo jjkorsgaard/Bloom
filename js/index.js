@@ -64,7 +64,7 @@ function onDiscoverDevice(device){
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
 		showFunctions();
-		conn()
+		
 	} //slut tuborgparentes til mulig if-sætning
 }
 
@@ -99,12 +99,12 @@ function onConnError(){
 function data(txt){
 	messageInput.value = txt;
 	var data = stringToBytes(messageInput.value);
-	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
+	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
 }	
 
 function sendData() { // send data to Arduino
 	 var data = stringToBytes(messageInput.value);
-	ble.writeWithoutResponse(ConnDeviceId, blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
+	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data, onSend, onError);
 }
 	
 function onSend(){
