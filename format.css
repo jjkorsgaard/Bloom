@@ -76,6 +76,10 @@ h2 {
     text-transform: uppercase;
 }
 
+#data {
+    display: none;
+}
+
 /*body{
     display: block;
     background-color: #ffffff;
