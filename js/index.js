@@ -63,7 +63,7 @@ function onDiscoverDevice(device){
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
 		
-		ble.autoConnect(blue.serviceUUID, onConnect, onConnError);
+		ble.autoConnect(device.id, onConnect, onConnError);
 	} //slut tuborgparentes til mulig if-sætning
 }
 
