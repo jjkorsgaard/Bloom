@@ -60,8 +60,8 @@ function onDiscoverDevice(device){
 		if (device.name == "BLOOM") {
 		// var listItem = document.createElement('li'),
 		// html = device.name+ "," + device.id;
-		// listItem.innerHTML = html;
-		// document.getElementById("bleDeviceList").appendChild(listItem);
+		listItem.innerHTML = html;
+		document.getElementById("bleDeviceList").appendChild(listItem);
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
 		showFunctions();
 	} //slut tuborgparentes til mulig if-sætning
