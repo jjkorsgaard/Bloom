@@ -123,7 +123,7 @@ function showFunctions() {
 }
 
 function cleaningLog(){
-	var url='https://placering.https://cleaninglog.000webhostapp.com/index.html.com';	
+	var url='https://cleaninglog.000webhostapp.com/index.html.com';	
 	openBrowser(url);
 }
 
