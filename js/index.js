@@ -62,7 +62,8 @@ function onDiscoverDevice(device){
 		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
-		conn();
+		ConnDeviceId = deviceTouchArr[1];
+		ble.connect(ConnDeviceId, onConnect, onConnError);
 	} //slut tuborgparentes til mulig if-sætning
 }
 
