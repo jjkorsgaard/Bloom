@@ -62,7 +62,6 @@ function onDiscoverDevice(device){
 		html = device.name+ "," + device.id;
 		listItem.innerHTML = html;
 		document.getElementById("bleDeviceList").appendChild(listItem);
-		ble.connect(ConnDeviceId, onConnect, onConnError);
 		} //slut tuborgparentes til mulig if-sætning
 }
 
@@ -73,7 +72,7 @@ function conn(){
 	var deviceTouchArr = deviceTouch.split(",");
 	ConnDeviceId = deviceTouchArr[1];
 	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-	ble.connect(ConnDeviceId, onConnect, onConnError);
+	ble.autoconnect(ConnDeviceId, onConnect, onConnError);
  }
  
  //succes
