@@ -62,7 +62,7 @@ function onDiscoverDevice(device){
 		// html = device.name;
 		// listItem.innerHTML = html;
 		// var 
-		// document.getElementById("bleDeviceList").appendChild(listItem);
+		document.getElementById("bleDeviceList").(device.name);
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError);
 		showFunctions();
 		
