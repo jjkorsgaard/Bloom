@@ -64,7 +64,7 @@ function onDiscoverDevice(device){
 		// var 
 		
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError); //MAC-adresse på enhed
-		document.getElementById("bleDeviceList").innerHTML = "BK04";
+		document.getElementById("bleDeviceList").innerHTML = "LOKALE: BK04";
 		showFunctions();		
 	} //slut tuborgparentes til mulig if-sætning
 }
@@ -90,11 +90,11 @@ function onConnect(){
 //failure
 function onConnError(){
 	alert("Problem connecting");
-	document.getElementById("statusDiv").innerHTML = " Status: Ikke forbundet";
+	document.getElementById("x").innerHTML = " Status: Ikke forbundet";
 }
 
  function onData(data){ // data received from Arduino
-	document.getElementById("receiveDiv").innerHTML =  "&#127777; " + bytesToString(data) + "°C <br/>";
+	document.getElementById("receiveDiv").innerHTML =  "&#127777; " + bytesToString(data) + "<br/>";
 }
 
 function data(txt){
