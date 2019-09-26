@@ -27,13 +27,11 @@ var deviceList =[];
  
 function onLoad(){
 	document.addEventListener('deviceready', onDeviceReady, false);
-    // bleDeviceList.addEventListener('touchstart', conn, false); // assume not scrolling
 }
 
 function onDeviceReady(){
 	refreshDeviceList();
 }
-
 	 
 function refreshDeviceList(){
 	//deviceList =[];
@@ -44,8 +42,7 @@ function refreshDeviceList(){
  		//alert("Disconnected");
  		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
  	}
- }
-
+}
 
 function onDiscoverDevice(device){
 	if (device.name == "BK04") {
@@ -55,29 +52,19 @@ function onDiscoverDevice(device){
 	}
 }
 
-// function conn(){
-// 	var  deviceTouch= event.srcElement.innerHTML;
-// 	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
-// 	var deviceTouchArr = deviceTouch.split(",");
-// 	ConnDeviceId = deviceTouchArr[1];
-// 	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-// 	ble.connect(ConnDeviceId, onConnect, onConnError);
-//  }
- 
- //succes
+ //Succes
 function onConnect(){
 	document.getElementById("statusDiv").innerHTML = " Status: Forbundet";
 	ble.startNotification('FB:4E:50:F6:53:97', blue.serviceUUID, blue.rxCharacteristic, onData, onError);
-	
 }
 
-//failure
+//Failure
 function onConnError(){
 	alert("Problem connecting");
 	document.getElementById("x").innerHTML = " Status: Ikke forbundet";
 }
 
- function onData(data){ // data received from Arduino
+ function onData(data){ // Data modtaget fra Arduino
 	document.getElementById("receiveDiv").innerHTML =  "&#127777; " + bytesToString(data) + "<br/>";
 }
 
@@ -87,7 +74,7 @@ function data(txt){
 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
 }	
 
-function sendData() { // send data to Arduino
+function sendData() { // Send data til Arduino
 	 var data = stringToBytes(messageInput.value);
 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
 }
