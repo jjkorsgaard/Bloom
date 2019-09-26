@@ -81,7 +81,7 @@ function conn(){
  
  //succes
 function onConnect(){
-	document.getElementById("statusDiv").innerHTML = " Status: Connected";
+	document.getElementById("statusDiv").innerHTML = " Status: Forbundet";
 	//document.getElementById("bleId").innerHTML = ConnDeviceId;
 	ble.startNotification('FB:4E:50:F6:53:97', blue.serviceUUID, blue.rxCharacteristic, onData, onError);
 	
@@ -90,7 +90,7 @@ function onConnect(){
 //failure
 function onConnError(){
 	alert("Problem connecting");
-	document.getElementById("statusDiv").innerHTML = " Status: Disonnected";
+	document.getElementById("statusDiv").innerHTML = " Status: Ikke forbundet";
 }
 
  function onData(data){ // data received from Arduino
