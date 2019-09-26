@@ -128,4 +128,7 @@ h2 {
 #receiveDiv {
     color: white;
     font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

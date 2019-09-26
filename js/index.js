@@ -82,7 +82,6 @@ function conn(){
  //succes
 function onConnect(){
 	document.getElementById("statusDiv").innerHTML = " Status: Connected";
-	//document.getElementById("bleId").innerHTML = ConnDeviceId;
 	ble.startNotification('FB:4E:50:F6:53:97', blue.serviceUUID, blue.rxCharacteristic, onData, onError);
 	
 }
@@ -94,7 +93,7 @@ function onConnError(){
 }
 
  function onData(data){ // data received from Arduino
-	document.getElementById("receiveDiv").innerHTML =  "Received: " + bytesToString(data) + "<br/>";
+	document.getElementById("receiveDiv").innerHTML =  bytesToString(data) + " °C <br/>";
 }
 
 function data(txt){
