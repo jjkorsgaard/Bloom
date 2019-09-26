@@ -4,8 +4,6 @@
     <meta charset="utf-8">
     <title>Bloom</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <!-- <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"> -->
     <link rel="stylesheet" type="text/css" href="format.css">
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="cordova.js"></script> 
@@ -16,68 +14,26 @@
 	</div>
 	<div class="site-section">
 		<br>
-		<!-- <h2>Forbind til Bluetooth-enhed:</h2>
-		<br>
-		<br><button onclick="onData()">Test</button> -->
 		<div id="bleDeviceList"></div>
-		
 		<div id="receiveDiv"></div>
 		<br>
 		<div id="functions">
-			<!-- <h2>LYS</h2> -->
-			
 			<button id="buttonOn" onclick="data('1')"><img src="lightbulb-on.png"></button>
 			<button id="buttonOff" onclick = "data('0')"><img src="lightbulb-off.png"></button>
 			<br><br>
 			<button onclick="manuals()" class="btn">Vejledninger</button>
 			<br><br>
-			<button onclick="cleaningLog()" class="btn">Rengøringsdagbog</button>
+			<button onclick="cleaningLog()" class="btn">Rengøringslog</button>
 			<br><br>
-			
-		</div>
+			</div>
 	<div id="statusDiv">Status: Ikke forbundet</div>
 	</div>
-	
-		
 		<div id="data">
 		<input type="text" id="messageInput" value="Hello"/>
 		<br></div>
-		<!--<button id="sendButton" onclick = "sendData()">Send</button>
-		<br>
--->
 		<br>
 		<div id="sendDiv"></div>
 		<br><br>
 		<div id="debugDiv"></div>
-		
-    <!--<img class="logo" src="bloom_logo.png">-->
-    	<!--ul id="bleDeviceList"> </ul>
-		<button id="refreshButton" onClick = "refreshDeviceList()">Opdatér liste</button>
-		<br>
-		<div class="test2">
-		<div id="statusDiv">Status: Ikke forbundet</div>
-		<div id="bleId">Navn på enhed:</div>
-		<div id="debugDiv"></div>
-		<br><br></div>
-		<hr>
-		<div class="test">
-		<button id="ledOnButton" onclick = "data('1')">Tænd lys</button>
-		<button id="ledOffButton" onclick = "data('0')">Sluk lys</button>
-		<br><br><br></div>
-		<input type="text" id="messageInput" value="Hello"/>
-		<br>
-		<button id="sendButton" onclick = "sendData()">Send</button>
-		<br>
-		
-		<br>
-		<div id="sendDiv"></div>
-		<br><br>
-		<button id="disconnectButton"onClick="disconnect()">Disconnect</button>
-		
-    	<ul id="bleDeviceList"> </ul>  
-		<br><br>
-		<div id="debugDiv"></div>
-		<div id="test"></div>
-    <button id="cleaninglog" onclick="test()">Vis rengøringsdagbog</button>-->
 </body>
 </html>

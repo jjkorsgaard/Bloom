@@ -1,7 +1,6 @@
 // Based on an example:
 //https://github.com/don/cordova-plugin-ble-central
 
-
 // ASCII only
 function bytesToString(buffer) {
     return String.fromCharCode.apply(null, new Uint8Array(buffer));
@@ -16,13 +15,7 @@ function stringToBytes(string) {
     return array.buffer;
 }
 
-// this is ble hm-10 UART service
-/*var blue= {
-    serviceUUID: "0000FFE0-0000-1000-8000-00805F9B34FB",
-    characteristicUUID: "0000FFE1-0000-1000-8000-00805F9B34FB"
-};*/
-
-//the bluefruit UART Service
+//The Bluefruit UART Service
 var blue ={
 	serviceUUID: '6e400001-b5a3-f393-e0a9-e50e24dcca9e',
     txCharacteristic: '6e400002-b5a3-f393-e0a9-e50e24dcca9e', // transmit is from the phone's perspective
@@ -42,47 +35,38 @@ function onDeviceReady(){
 }
 
 	 
-function refreshDeviceList(){
-	//deviceList =[];
-	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
-	if (cordova.platformId === 'android') { // Android filtering is broken
-		ble.scan([], 5, onDiscoverDevice, onError);
-	} else {
-		//alert("Disconnected");
-		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
-	}
-}
+// function refreshDeviceList(){
+// 	//deviceList =[];
+// 	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
+// 	if (cordova.platformId === 'android') { // Android filtering is broken
+// 		ble.scan([], 5, onDiscoverDevice, onError);
+// 	} else {
+// 		//alert("Disconnected");
+// 		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
+// 	}
+// }
 
 
 function onDiscoverDevice(device){
-	//Make a list in html and show devises
-		//if(device.name == "LONE"){      //indsæt evt. en if-sætning, så kun egen bluifruit modul sættes på listen
-		if (device.name == "BK04") {
-		// var listItem = document.createElement('li'),
-		//html = device.name;
-		// listItem.innerHTML = html;
-		// var 
-		
+	if (device.name == "BK04") {
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError); //MAC-adresse på enhed
 		document.getElementById("bleDeviceList").innerHTML = "LOKALE: BK04";
 		showFunctions();		
-	} //slut tuborgparentes til mulig if-sætning
+	}
 }
 
-
-function conn(){
-	var  deviceTouch= event.srcElement.innerHTML;
-	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
-	var deviceTouchArr = deviceTouch.split(",");
-	ConnDeviceId = deviceTouchArr[1];
-	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
-	ble.connect(ConnDeviceId, onConnect, onConnError);
- }
+// function conn(){
+// 	var  deviceTouch= event.srcElement.innerHTML;
+// 	document.getElementById("debugDiv").innerHTML =""; // empty debugDiv
+// 	var deviceTouchArr = deviceTouch.split(",");
+// 	ConnDeviceId = deviceTouchArr[1];
+// 	document.getElementById("debugDiv").innerHTML += "<br>"+deviceTouchArr[0]+"<br>"+deviceTouchArr[1]; //for debug:
+// 	ble.connect(ConnDeviceId, onConnect, onConnError);
+//  }
  
  //succes
 function onConnect(){
 	document.getElementById("statusDiv").innerHTML = " Status: Forbundet";
-	//document.getElementById("bleId").innerHTML = ConnDeviceId;
 	ble.startNotification('FB:4E:50:F6:53:97', blue.serviceUUID, blue.rxCharacteristic, onData, onError);
 	
 }
