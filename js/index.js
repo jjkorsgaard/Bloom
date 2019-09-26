@@ -25,10 +25,10 @@ var blue ={
 var ConnDeviceId;
 var deviceList =[];
  
-function onLoad(){
-	document.addEventListener('deviceready', onDeviceReady, false);
-    bleDeviceList.addEventListener('touchstart', conn, false); // assume not scrolling
-}
+// function onLoad(){
+// 	document.addEventListener('deviceready', onDeviceReady, false);
+//     bleDeviceList.addEventListener('touchstart', conn, false); // assume not scrolling
+// }
 
 function onDeviceReady(){
 	refreshDeviceList();
