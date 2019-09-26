@@ -124,3 +124,8 @@ h2 {
     background-color: black;
     color: white;
 }
+
+#receiveDiv {
+    color: white;
+    font-size: 25px;
+}

@@ -65,8 +65,7 @@ function onDiscoverDevice(device){
 		
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError); //MAC-adresse på enhed
 		document.getElementById("bleDeviceList").innerHTML = "BK04";
-		showFunctions();
-		onConnect()
+		showFunctions();		
 	} //slut tuborgparentes til mulig if-sætning
 }
 
