@@ -9,14 +9,14 @@
     <script type="text/javascript" src="cordova.js"></script> 
 </head>
 <body onload="onLoad()">
-	<div class="site-header">
+	<div class="header">
 			<img class="logo" src="Logo.png">
 	</div>
-	<div class="site-section">
+	<div class="main">
 		<br>
-		<div id="bleDeviceList"></div>
+		<div id="bleDevice"></div>
 		<br>
-		<div id="receiveDiv"></div>
+		<div id="receiveTemp"></div>
 		<br>
 		<div id="functions">
 			<button id="buttonOn" onclick="data('1')"><img src="lightbulb-on.png"></button>
@@ -27,16 +27,8 @@
 			<button onclick="cleaningLog()" class="btn">Rengøringslog</button>
 			<br><br>
 		</div>
-	<div id="statusDiv">Status: Ikke forbundet</div>
+		<div id="statusDiv">Status: Ikke forbundet</div>
 	</div>
-	
-		
-		<!-- <div id="data"> -->
-		<div type="text" id="messageInput" value="0">
-		<br></div>
-		<!-- <br>
-		<div id="sendDiv"></div>
-		<br><br>
-		<div id="debugDiv"></div> -->
+	<div type="text" id="messageInput" value="0"></div>
 </body>
 </html>

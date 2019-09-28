@@ -22,30 +22,18 @@ var blue ={
     rxCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e'  // receive is from the phone's perspective
 }
 
-var ConnDeviceId;
-var deviceList =[];
- 
 function onLoad(){
 	document.addEventListener('deviceready', refreshDeviceList, false);
 }
 	 
 function refreshDeviceList(){
 	ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
-	//deviceList =[];
- 	// document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
- 	// if (cordova.platformId === 'android') { // Android filtering is broken
-	// 	 ble.scan([], 5, onDiscoverDevice, onError);
-	 
- 	// } else {
- 	// // 	//alert("Disconnected");
- 	// ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
- 	// }
 }
 
 function onDiscoverDevice(device){
 	if (device.name == "BK04") {  
 		ble.connect('FB:4E:50:F6:53:97', onConnect, onConnError); //Forbinder til BLE-enheds MAC-adresse
-		document.getElementById("bleDeviceList").innerHTML = "LOKALE: BK04"; //Printer streng i app
+		document.getElementById("bleDevice").innerHTML = "LOKALE: BK04"; //Printer streng i app
 		showFunctions(); //Kører funktion showFunctions();		
 	}
 }
@@ -65,7 +53,7 @@ function onConnError(){
 
  function onData(data){ //Data modtaget fra Arduino
 	//Funktionen bytesToString() omdanner variablen 'data' fra bytes til en streng
-	document.getElementById("receiveDiv").innerHTML =  "&#127777; " + bytesToString(data) + "<br/>";
+	document.getElementById("receiveTemp").innerHTML =  "&#127777; " + bytesToString(data) + "<br/>";
 }
 
 function data(txt){
@@ -75,23 +63,6 @@ function data(txt){
 	//Data sendes til BLE-enhed som bytes
 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
 }	
-
-// function sendData() { //Send data til Arduino
-// 	var data = stringToBytes(messageInput.value);
-// 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
-// }
-	
-// function onSend(){
-// 	document.getElementById("sendDiv").innerHTML = "Sent: " + messageInput.value + "<br/>";
-// }
-
-// function disconnect() {
-// 	ble.disconnect(deviceId, onDisconnect, onError);
-// }
-
-// function onDisconnect(){
-// document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
-// }
 
 //Funktion til visning af fejl
 function onError(reason)  {
