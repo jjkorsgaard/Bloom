@@ -26,21 +26,21 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
-	document.addEventListener('deviceready', onDiscoverDevice, false);
+	document.addEventListener('deviceready', refreshDeviceList, false);
 }
 
 // function onDeviceReady(){
 // 	refreshDeviceList();
 // }
 	 
-// function refreshDeviceList(){
-// 	//deviceList =[];
-//  	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
-//  	if (cordova.platformId === 'android') { // Android filtering is broken
-//  		ble.scan([], 5, onDiscoverDevice, onError);
-//  	} else {
-//  		//alert("Disconnected");
-//  		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
+function refreshDeviceList(){
+	//deviceList =[];
+ 	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
+ 	if (cordova.platformId === 'android') { // Android filtering is broken
+ 		ble.scan([], 5, onDiscoverDevice, onError);
+ 	} else {
+ 		//alert("Disconnected");
+ 		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
  	}
 }
 
@@ -91,9 +91,9 @@ function onSend(){
 // 	ble.disconnect(deviceId, onDisconnect, onError);
 // }
 
-function onDisconnect(){
-/document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
-}
+// function onDisconnect(){
+// /document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
+// }
 
 //Funktion til visning af fejl
 function onError(reason)  {
