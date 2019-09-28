@@ -79,9 +79,9 @@ function data(txt){
 // 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
 // }
 	
-function onSend(){
-	document.getElementById("sendDiv").innerHTML = "Sent: " + messageInput.value + "<br/>";
-}
+// function onSend(){
+// 	document.getElementById("sendDiv").innerHTML = "Sent: " + messageInput.value + "<br/>";
+// }
 
 function disconnect() {
 	ble.disconnect(deviceId, onDisconnect, onError);
