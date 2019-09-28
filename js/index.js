@@ -26,7 +26,7 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
-	document.addEventListener('', refreshDeviceList, false);
+	document.addEventListener('deviceready', refreshDeviceList, false);
 }
 	 
 function refreshDeviceList(){
