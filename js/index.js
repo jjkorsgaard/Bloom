@@ -26,14 +26,14 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
-	document.addEventListener('deviceready', test, false);
+	document.addEventListener('deviceready', onDeviceReady, false);
 }
 
 function onDeviceReady(){
 	refreshDeviceList();
 }
 	 
-function test(){
+function refreshDeviceList(){
 	//deviceList =[];
  	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
  	if (cordova.platformId === 'android') { // Android filtering is broken
