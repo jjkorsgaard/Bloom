@@ -7,12 +7,11 @@
 
     <name>Bloom</name>
     <description>
-        A sample app from a phone  BLE hardware.
+        IoT-projekt 2
     </description>
     <author >
-         Lone Østerlund based on an example by Don Coleman: 
-		 https://github.com/don/cordova-plugin-ble-central 
-
+        Group 8 (IoT-projekt 2, ITT) and Lone Østerlund based on an example by Don Coleman: 
+		https://github.com/don/cordova-plugin-ble-central 
     </author>
 
     <content src="index.html" />
