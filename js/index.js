@@ -26,18 +26,19 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
-	document.addEventListener('deviceready', refreshDeviceList, false);
+	document.addEventListener('', refreshDeviceList, false);
 }
 	 
 function refreshDeviceList(){
 	//deviceList =[];
- 	document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
+ 	// document.getElementById("bleDeviceList").innerHTML = ''; // empties the list
  	if (cordova.platformId === 'android') { // Android filtering is broken
- 		ble.scan([], 5, onDiscoverDevice, onError);
- 	} else {
- 		//alert("Disconnected");
- 		ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
- 	}
+		 ble.scan([], 5, onDiscoverDevice, onError);
+	 }
+ 	// } else {
+ 	// 	//alert("Disconnected");
+ 	// 	ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
+ 	// }
 }
 
 function onDiscoverDevice(device){
@@ -57,7 +58,7 @@ function onConnect(){
 
 //Forbindelse ikke oprettet
 function onConnError(){
-	alert("Problem med at forbinde");
+	alert("Problemer med at forbinde");
 	document.getElementById("x").innerHTML = " Status: Ikke forbundet";
 }
 
