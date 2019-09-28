@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>Bloom</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <link rel="stylesheet" type="text/css" href="format.css">
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="cordova.js"></script> 
+    <link rel="stylesheet" type="text/css" href="format.css"> <!--Link til eskternt stylesheet-->
+    <script type="text/javascript" src="js/index.js"></script> <!--Link til ekstern JavaScript-fil-->
+    <script type="text/javascript" src="cordova.js"></script> <!--Link til ekstern JavaScript-fil-->
 </head>
-<body onload="onLoad()">
+<body onload="onLoad()"><!--Kører JavaScript-funktionen onLoad()-->
 	<div class="header">
 			<img class="logo" src="Logo.png">
 	</div>
@@ -19,16 +19,17 @@
 		<div id="receiveTemp"></div>
 		<br>
 		<div id="functions">
-			<button id="buttonOn" onclick="data('1')"><img src="lightbulb-on.png"></button>
-			<button id="buttonOff" onclick = "data('0')"><img src="lightbulb-off.png"></button>
+			<button id="buttonOn" onclick="data('1')"><img src="lightbulb-on.png"></button><!--Ved tryk på knap køres JavaScript-funktionen data() med værdien '1'-->
+			<button id="buttonOff" onclick = "data('0')"><img src="lightbulb-off.png"></button><!--Ved tryk på knap køres JavaScript-funktionen data() med værdien '0'-->
+			<div type="text" id="messageInput" value="0"></div>
 			<br><br>
-			<button onclick="manuals()" class="btn">Vejledninger</button>
+			<button onclick="manuals()" class="btn">Vejledninger</button><!--Ved tryk på knap køres JavaScript-funktionen manuals()-->
 			<br><br>
-			<button onclick="cleaningLog()" class="btn">Rengøringslog</button>
+			<button onclick="cleaningLog()" class="btn">Rengøringslog</button><!--Ved tryk på knap køres JavaScript-funktionen cleaningLog()-->
 			<br><br>
 		</div>
 		<div id="statusDiv">Status: Ikke forbundet</div>
 	</div>
-	<div type="text" id="messageInput" value="0"></div>
+	
 </body>
 </html>
