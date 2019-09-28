@@ -18,8 +18,8 @@ function stringToBytes(string) {
 //Bluefruit UART Service
 var blue ={
 	serviceUUID: '6e400001-b5a3-f393-e0a9-e50e24dcca9e',
-    txCharacteristic: '6e400002-b5a3-f393-e0a9-e50e24dcca9e', // transmit is from the phone's perspective
-    rxCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e'  // receive is from the phone's perspective
+    txCharacteristic: '6e400002-b5a3-f393-e0a9-e50e24dcca9e',
+    rxCharacteristic: '6e400003-b5a3-f393-e0a9-e50e24dcca9e'
 }
 
 function onLoad(){
@@ -27,7 +27,7 @@ function onLoad(){
 }
 	 
 function refreshDeviceList(){
-	ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError);
+	ble.scan([blue.serviceUUID], 5, onDiscoverDevice, onError); //Skanner for BLE-enheder
 }
 
 function onDiscoverDevice(device){
