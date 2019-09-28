@@ -28,10 +28,6 @@ var deviceList =[];
 function onLoad(){
 	document.addEventListener('deviceready', refreshDeviceList, false);
 }
-
-function onDeviceReady(){
-	refreshDeviceList();
-}
 	 
 function refreshDeviceList(){
 	//deviceList =[];
@@ -78,10 +74,10 @@ function data(txt){
 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
 }	
 
-function sendData() { //Send data til Arduino
-	var data = stringToBytes(messageInput.value);
-	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
-}
+// function sendData() { //Send data til Arduino
+// 	var data = stringToBytes(messageInput.value);
+// 	ble.writeWithoutResponse('FB:4E:50:F6:53:97', blue.serviceUUID, blue.txCharacteristic, data);
+// }
 	
 function onSend(){
 	document.getElementById("sendDiv").innerHTML = "Sent: " + messageInput.value + "<br/>";
