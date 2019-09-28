@@ -26,7 +26,7 @@ var ConnDeviceId;
 var deviceList =[];
  
 function onLoad(){
-	document.addEventListener(' ', onDeviceReady, false);
+	document.addEventListener('deviceready', onDeviceReady, false);
 }
 
 function onDeviceReady(){
@@ -92,7 +92,7 @@ function disconnect() {
 }
 
 function onDisconnect(){
-/document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
+document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
 }
 
 //Funktion til visning af fejl
