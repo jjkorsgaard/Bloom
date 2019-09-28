@@ -27,6 +27,7 @@ var deviceList =[];
  
 function onLoad(){
 	document.addEventListener('deviceready', onDeviceReady, false);
+	bleDeviceList.addEventListener('touchstart', conn, false);
 }
 
 function onDeviceReady(){
