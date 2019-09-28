@@ -83,13 +83,13 @@ function data(txt){
 // 	document.getElementById("sendDiv").innerHTML = "Sent: " + messageInput.value + "<br/>";
 // }
 
-function disconnect() {
-	ble.disconnect(deviceId, onDisconnect, onError);
-}
+// function disconnect() {
+// 	ble.disconnect(deviceId, onDisconnect, onError);
+// }
 
-function onDisconnect(){
-document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
-}
+// function onDisconnect(){
+// document.getElementById("statusDiv").innerHTML = "Status: Disconnected";
+// }
 
 //Funktion til visning af fejl
 function onError(reason)  {
