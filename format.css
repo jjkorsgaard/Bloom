@@ -8,6 +8,7 @@ body {
 img {
     width: 100%;
 }
+
 .header {
     background-color: rgb(255, 255, 255);
     margin: 0 auto;
@@ -108,6 +109,7 @@ h2 {
     border-radius: 5px;
     width: 300px;
 }
+
 .btn:active {
     background-color: black;
     color: white;
