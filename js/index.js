@@ -51,7 +51,7 @@ function onConnError(){
 	document.getElementById("x").innerHTML = " Status: Ikke forbundet";
 }
 
- function onData(data){ //Data modtaget fra Arduino
+ function onData(data){
 	//Funktionen bytesToString() omdanner variablen 'data' fra bytes til en streng
 	document.getElementById("receiveTemp").innerHTML =  "&#127777; " + bytesToString(data) + "<br/>";
 }
